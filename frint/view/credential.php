@@ -1,6 +1,6 @@
 <?php 
 
-define('EMAIL', 'eyawarteni68@gmail.com');
-define ('PASS','$alem$alem2014');
+define('EMAIL', '');
+define ('PASS','');
 
 ?>
