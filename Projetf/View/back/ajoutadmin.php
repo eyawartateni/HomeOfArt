@@ -112,54 +112,57 @@ if( !empty($_POST['nom']) &&
       <div class="py-3 text-center">
     <h1>admin</h1><br><br><br>
    </div>
-   
-  
 
 
 
 
 
-   <form action="" method="POST">
-                                        
-                                        <div class="form-row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="small mb-1" for="inputFirstName">First Name</label>
-                                                    <input class="form-control py-4" name="nom" id="nom" type="text" placeholder="Enter first name" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="small mb-1" for="inputLastName">Last Name</label>
-                                                    <input class="form-control py-4" name="prenom" id="prenom" type="text" placeholder="Enter last name" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                            <input class="form-control py-4" name="email" id="email" type="text" aria-describedby="emailHelp" placeholder="Enter email address" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="small mb-1" for="inputEmailAddress">login</label>
-                                            <input class="form-control py-4" name="login" id="login" type="text"  placeholder="Enter your login" />
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="small mb-1" for="inputPassword">Password</label>
-                                                    <input class="form-control py-4" name="pass" id="pass" type="password" placeholder="Enter password" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
-                                                    <input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group mt-4 mb-0"><button type="submit" name="olla" class="btn btn-primary btn-block" >Create Account</button></div>
-</form>
 
+
+        <form name="f" action="" method="POST" onsubmit="test();">
+
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="inputFirstName">First Name</label>
+                        <input class="form-control py-4" name="nom" id="nom" type="text" placeholder="Enter first name" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="inputLastName">Last Name</label>
+                        <input class="form-control py-4" name="prenom" id="prenom" type="text" placeholder="Enter last name" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                <input class="form-control py-4" name="email" id="email" type="text" aria-describedby="emailHelp" placeholder="Enter email address" />
+            </div>
+            <div class="form-group">
+                <label class="small mb-1" for="inputEmailAddress">login</label>
+                <input class="form-control py-4" name="login" id="login" type="text"  placeholder="Enter your login" />
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="inputPassword">Password</label>
+                        <input class="form-control py-4" name="pass" id="pass" type="password" placeholder="Enter password" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
+                        <input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-4 mb-0"><button type="submit" name="olla" class="btn btn-primary btn-block" >Create Account</button></div>
+        </form>
+        <script src="../../script.js">
+
+
+        </script>
 </body>
 
 
