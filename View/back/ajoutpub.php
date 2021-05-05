@@ -151,7 +151,7 @@ if (
              
 
                <div class="d-grid gap-2 col-6 mx-auto">
-               <input type ="submit" name="submits" value="Partager sans image"  class ="btn btn-primary" onclick="verifier();"><br><br>
+               <input type ="submit" name="submits" value="Partager sans image"  class ="btn btn-primary" onclick=" return verifier();"><br><br>
                </div>
              
                <div class="d-grid gap-2 col-6 mx-auto">

@@ -60,8 +60,8 @@ $db= config::getConnexion();
     
                                     <select name="tri" id="tri" >
                                        <option value="id_commentaire" selected>id_commentaire</option>
-                                       <option value="pseudo">pseudo</option>
                                        <option value="messages">messages</option>
+                                       <option value="date_commentaire">date_commentaire</option>
                                     </select>
                               </p>
                               <br><br><br>
@@ -77,9 +77,8 @@ $db= config::getConnexion();
             <tr>
                 
                  <th>id_commentaire</th>
-                <th>pseudo</th>
-                <th>messages</th>
-                <th>date_commentaire</th>
+                 <th>messages</th>
+                 <th>date_commentaire</th>
                
                 
             </tr>
@@ -92,12 +91,11 @@ $db= config::getConnexion();
             try
     {
         // On se connecte à MySQL
-        $reponse = $db->query('SELECT id_commentaire,pseudo,messages,date_commentaire FROM commentaire ORDER BY '.$tri.'') or die(print_r($bdd->errorInfo()));  
+        $reponse = $db->query('SELECT id_commentaire,messages,date_commentaire FROM commentaire ORDER BY '.$tri.'') or die(print_r($bdd->errorInfo()));  
           
                 while($donnees = $reponse->fetch())
                 {
                     echo  '<tr><td>'.$donnees['id_commentaire'],
-                          '</td><td>'.$donnees['pseudo'],
                           '</td><td>'. $donnees['messages'],
                           '</td><td>'. $donnees['date_commentaire'],
                         

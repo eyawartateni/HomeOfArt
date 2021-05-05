@@ -99,11 +99,11 @@ function afficherCommentaires()
 			}
 		}
 
-      function RechercherCommentaire($id_commentaire)
+      function RechercherCommentaire($id_commentaire,$id_publication_commentaire,$id_client_commentaire)
       {
 
 
-      $sql="SELECT * FROM commentaire where id_commentaire='$id_commentaire'";
+      $sql="SELECT * FROM commentaire where id_commentaire='$id_commentaire' AND id_publication_commentaire='$id_publication_commentaire' AND id_client_commentaire='$id_client_commentaire' ";
       $db=Config::getConnexion();
       try{
       $liste = $db->query($sql);

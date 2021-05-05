@@ -17,6 +17,7 @@ $db= config::getConnexion();
   
 
 <
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,9 +56,13 @@ $db= config::getConnexion();
     
 <form  action="rechercher_commentaire.php" method="POST">
 
-<label for="titre"> <h6> Veuillez saisir l'identifiant de commentaire cherché :</h6> </label>
+<label for="titre"> <h6> Veuillez saisir les identifiants cherchés :</h6> </label>
+
 <br>
-    <input type="text" name="id_commentaire"  maxlength="50" placeholder="Entrer l'identifiant" required="" class= "form form-control">
+    <input type="text" name="id_commentaire"  maxlength="50" placeholder="Entrer l'identifiant commentaire" required=""  class= "form form-control"><br>
+    <input type="text" name="id_publication_commentaire"  maxlength="50" placeholder="Entrer l'identifiant publication" required=""  class= "form form-control"><br>
+    <input type="text" name="id_client_commentaire"  maxlength="50" placeholder="Entrer l'identifiant client" required=""  class= "form form-control"><br>
+
     <br>
     <br>
     <br>
@@ -70,9 +75,9 @@ $db= config::getConnexion();
         <hr>
 
         <?php
-        if(isset($_POST['id_commentaire']) && isset($_POST['submit'])) 
+        if(isset($_POST['id_commentaire']) &&isset($_POST['id_publication_commentaire']) && isset($_POST['id_client_commentaire']) && isset($_POST['submit'])) 
         { 
-            $liste=$comC->RechercherCommentaire($_POST['id_commentaire']);
+            $liste=$comC->RechercherCommentaire($_POST['id_commentaire'],$_POST['id_publication_commentaire'],$_POST['id_client_commentaire']);
             if ($liste !== false) {
     ?>
         <table class="table table-success table-striped" style= "width: 100%">
@@ -80,15 +85,15 @@ $db= config::getConnexion();
                 
                 <th>id_commentaire</th>
                 <td>
-                <th>pseudo</th>
-                </td>
-                <td>
                 <th>messages</th>
                 <td>
                 <th>date_commentaire</th>
                 <td>
                 <th>id_publication</th>
-                
+                </td>
+                <td>
+                <th>id_client</th>
+                </td>
                
                 
             </tr>
@@ -103,13 +108,14 @@ $db= config::getConnexion();
 
                     <td><?PHP echo $comment['id_commentaire']; ?></td>
                     <td>
-                    <td><?PHP echo $comment['pseudo']; ?></td>
-                    <td>
                     <td><?PHP echo $comment['messages']; ?></td>
                     <td>
                     <td><?PHP echo $comment['date_commentaire']; ?></td>
                     <td>
                     <td><?PHP echo $comment['id_publication_commentaire']; ?></td>
+                    <td>
+                    <td><?PHP echo $comment['id_client_commentaire']; ?></td>
+
          
                 </tr>
 

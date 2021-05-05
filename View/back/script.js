@@ -6,12 +6,16 @@ function verifier()
    
 
 	if(titre.charAt(0)<'A' ||  titre.charAt(0) >'Z')
+	{
 	alert("Le titre doit commencer par une majuscule");
-	
+	return false;
+	}
     
 	if(Description.charAt(0)<'A' ||Description.charAt(0) >'Z')
+	{
 	alert("La description doit commencer par une majuscule");
-	
+	return false;
+	}
 
 	
 	

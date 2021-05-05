@@ -68,9 +68,6 @@ $req=$comC->afficherReponses();
                 <td>
                 <th>id_commentaire_reponse</th>
                 </td>
-                <td>
-                <th>pseudo</th>
-                <td>
                 <th>messages</th>
                 <td>
                 <th>date_reponse</th>
@@ -86,9 +83,7 @@ $req=$comC->afficherReponses();
                     <td><?PHP echo $comment['id_reponse']; ?></td>
                     <td>
                     <td><?PHP echo $comment['id_commentaire_reponse']; ?></td>
-                    <td>
-                    <td><?PHP echo $comment['pseudo']; ?></td>
-                    <td>
+                   
                     <td><?PHP echo $comment['messages']; ?></td>
                     <td>
                     <td><?PHP echo $comment['date_reponse']; ?></td>
