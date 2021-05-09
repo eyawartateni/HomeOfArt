@@ -1,9 +1,9 @@
 <?php
 
 require_once ('include/header.php');
-include_once "../config.php";
-include_once '../model/produit.php';
-include_once '../Controller/Cproduit.php';
+include_once "../../config.php";
+include_once '../../model/produit.php';
+include_once '../../Controller/Cproduit.php';
 $db= config::getConnexion();
 $prod = new Cproduit();
 $condi=0;

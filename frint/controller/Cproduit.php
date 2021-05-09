@@ -1,6 +1,6 @@
 <?php
-include_once "../config.php";
-require_once "../Model/produit.php";
+include_once "../../config.php";
+require_once "../../model/produit.php";
 
 
 class Cproduit{

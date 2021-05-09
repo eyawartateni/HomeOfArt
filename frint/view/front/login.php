@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    include_once "../../Controller/Cutilisateur.php";
-    include_once "../../Model/utilisateur.php";
+    include_once "../../controller/UtilisateurC.php";
+    include_once "../../model/Utilisateur.php";
     include_once "../../config.php";
 
 

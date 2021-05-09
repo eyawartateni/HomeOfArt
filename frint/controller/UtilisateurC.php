@@ -1,6 +1,6 @@
 <?php
-include_once "../config.php";
-require_once "../Model/utilisateur.php";
+include_once "../../config.php";
+require_once "../../model/Utilisateur.php";
 
 
 class utilisateurC

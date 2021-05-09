@@ -1,10 +1,10 @@
 <?php
 require_once ('include/header.php');
-include_once "../config.php";
-include_once '../model/produit.php';
-include_once '../Controller/Cproduit.php';
-include_once '../model/categorie.php';
-include_once '../Controller/categorieC.php';
+include_once "../../config.php";
+include_once '../../model/produit.php';
+include_once '../../Controller/Cproduit.php';
+include_once '../../model/categorie.php';
+include_once '../../Controller/categorieC.php';
 $prod = new Cproduit();
 $cat = new categorieC();
 $db= config::getConnexion();

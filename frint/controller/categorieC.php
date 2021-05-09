@@ -1,6 +1,6 @@
 <?php
-include_once "../config.php";
-require_once "../Model/categorie.php";
+include_once "../../config.php";
+require_once "../../model/categorie.php";
 
 
 class categorieC{
