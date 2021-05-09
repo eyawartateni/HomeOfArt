@@ -2,6 +2,7 @@
  include_once "../../controller/UtilisateurC.php";
  include_once "../../model/Utilisateur.php";
  include_once "../../config.php";
+ require_once ('include/header.php');
     $error="";
     $user=null;
     $userC= new utilisateurC();
@@ -56,7 +57,7 @@ session_start();
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>register</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/a.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body style="background-color:#db7618;">
@@ -108,7 +109,7 @@ session_start();
                                                 </div>
                                             </div>
                                             
-    <table>
+    
     <tr>
       <td>
         <label>Entrer le texte dans l'image</label>
@@ -117,7 +118,7 @@ session_start();
       </td>
     </tr>
    
-    </table>
+    
    
                                             <div class="form-group mt-4 mb-0"><button type="submit" name="olla" class="btn btn-primary btn-block" href="../login.php">Create Account</button></div>
                                         </form>

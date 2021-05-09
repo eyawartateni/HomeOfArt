@@ -13,11 +13,12 @@
 
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="./include/css/styles.css" />
-  <link rel="stylesheet" href="./css/styles.css" />
+  
   <title>SeeMyArt - Ecommerce Website</title>
 </head>
 
 <body>
+
   <!-- Header -->
   <header id="home" class="header">
     <!-- Navigation -->
@@ -39,7 +40,7 @@
 
           <ul class="nav-list">
             <li class="nav-item">
-              <a href="/web/frint/view/afficherPub.php" class="nav-link scroll-link">Home</a>
+              <a href="./afficherPub.php" class="nav-link scroll-link">Home</a>
             </li>
             <li class="nav-item">
               <a href="/web/frint/view/afficherEvent.php" class="nav-link">Evénements</a>
@@ -56,6 +57,9 @@
             <li class="nav-item">
               <a href="cart.html" class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
             </li>
+            
+            
+            
           </ul>
         </div>
 
@@ -67,5 +71,6 @@
           <i class="bx bx-menu"></i>
         </div>
       </div>
+     
     </nav>
 

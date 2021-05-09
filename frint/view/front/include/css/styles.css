@@ -17,6 +17,37 @@
   box-sizing: inherit;
 }
 
+
+
+
+
+
+
+
+button {
+  background-color: #04AA6D;
+  color: #ff8800;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;

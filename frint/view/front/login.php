@@ -3,6 +3,7 @@
     include_once "../../controller/UtilisateurC.php";
     include_once "../../model/Utilisateur.php";
     include_once "../../config.php";
+    require_once ('include/header.php');
 
 
     $message="";
@@ -64,7 +65,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>login</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/a.css" rel="stylesheet" />
         
     </head>
     <body  style="background-color:#db7618;">
