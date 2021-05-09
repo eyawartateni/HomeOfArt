@@ -5,6 +5,7 @@ include_once '../../model/produit.php';
 include_once '../../controller/Cproduit.php';
 include_once '../../model/categorie.php';
 include_once '../../controller/categorieC.php';
+session_start();
 $prod = new Cproduit();
 $cat = new categorieC();
 $db= config::getConnexion();
@@ -13,7 +14,7 @@ $db= config::getConnexion();
 <html lang="en">
     <!-- Hero -->
    
-    <li value="login" style="background-color: #04AA6D; color: #ff8800; padding: 12px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 20%;font-size: 12px; position:absolute ; top:5px; right:5px;">
+    <li value="login" style="background-color: #04AA6D; color: #ff8800; padding: 12px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 3.5%;font-size: 12px; position:absolute ; top:5px; right:140px;">
                <a href="./login.php" > login</a>
             </li>
     <img src="./include/images/banner.png" alt="" class="hero-img" />

@@ -52,7 +52,7 @@
               <a href="#contact" class="nav-link scroll-link">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="#account" class="nav-link scroll-link">Account</a>
+              <a href="./ProfilUser.php" class="nav-link scroll-link">Account</a>
             </li>
             <li class="nav-item">
               <a href="cart.html" class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
