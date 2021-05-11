@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once ('index.html');
 include_once "../../controller/UtilisateurC.php";
     include_once "../../model/Utilisateur.php";
     include_once "../../config.php";
@@ -100,23 +101,24 @@ if($_SESSION['act']=="0")
             }
 
         </style>
-        <?php
-   require_once ('include/header.php');
-    ?>
+       
     </head>
     <body>
     
-    <li value="logout" style="background-color: #04AA6D; color: #ff8800; padding: 12px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 3.5%;font-size: 12px; position:absolute ; top:5px; right:140px;">
-               <a href="./logout.php" > logout</a>
-            </li>
+    
     
     <div class="container">
         <div class="main-body">
 
             <!-- Breadcrumb -->
+            <br>
+            <br>
+            <br>
+
+
             <nav aria-label="breadcrumb" class="main-breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="affichePub.php">Home</a></li>
+                    
                     <li class="breadcrumb-item active" aria-current="page">User Profile</li>
                 </ol>
             </nav>
@@ -183,20 +185,8 @@ if($_SESSION['act']=="0")
                                         <input type="password" name=pass class="form-control" value="<?php echo $password ?>">
                                     </div>
                                 </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">role</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                    <select name="role">
-                                    <option value="0" selected="selected">choisir un role</option>
-                                    <option value="artiste"> artiste</option>
-                                     <option value="client"> client</option>
-                                     </select>
-                                        
-                                    </div>
-                                </div>
+                                
+                                
                             </div>
 
                         </div>
