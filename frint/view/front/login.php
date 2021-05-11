@@ -3,13 +3,13 @@
     include_once "../../controller/UtilisateurC.php";
     include_once "../../model/Utilisateur.php";
     include_once "../../config.php";
-    require_once ('include/header.php');
+    
 
 
     $message="";
     $user=null;
     $userC= new utilisateurC();
-
+    $_SESSION['act']="0";
     if(      isset($_POST['email']) &&
              isset($_POST['pass'])
              
@@ -25,6 +25,7 @@
                 if($message!='pseudo ou le mot de passe est incorrect')
                 {
                     $liste=$userC->Rechercherid($_POST['email'],$_POST['pass']);
+                    $_SESSION['act']="1";
                     $_SESSION['id']=$liste['id'];
                     $_SESSION['nom']=$liste['nom'];
                     $_SESSION['prenom']=$liste['prenom'];
@@ -59,6 +60,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -66,6 +68,9 @@
         <meta name="author" content="" />
         <title>login</title>
         <link href="css/a.css" rel="stylesheet" />
+        <?php
+    require_once ('include/header.php');
+    ?>
         
     </head>
     <body  style="background-color:#db7618;">

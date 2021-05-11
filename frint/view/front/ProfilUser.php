@@ -29,6 +29,10 @@ if(isset($_POST['supp']))
     $userC->SupprimerUtilisateur($id);
     header('location:login.php');
 }
+if($_SESSION['act']=="0")
+{
+    header('location:login.php');
+}
 
 ?>
     <!DOCTYPE html>
@@ -37,7 +41,7 @@ if(isset($_POST['supp']))
         <meta charset="utf-8">
         <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
         <!--  All snippets are MIT license http://bootdey.com/license -->
-        <title>profile with data and skills - Bootdey.com</title>
+        <title>profil</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <style type="text/css">
@@ -96,11 +100,15 @@ if(isset($_POST['supp']))
             }
 
         </style>
+        <?php
+   require_once ('include/header.php');
+    ?>
     </head>
     <body>
-    <?php
-    include('menu.php');
-    ?>
+    
+    <li value="logout" style="background-color: #04AA6D; color: #ff8800; padding: 12px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 3.5%;font-size: 12px; position:absolute ; top:5px; right:140px;">
+               <a href="./logout.php" > logout</a>
+            </li>
     <br>
     <br>
     <br>
@@ -112,7 +120,7 @@ if(isset($_POST['supp']))
             <!-- Breadcrumb -->
             <nav aria-label="breadcrumb" class="main-breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="affichePub.php">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">User Profile</li>
                 </ol>
             </nav>
@@ -127,7 +135,7 @@ if(isset($_POST['supp']))
                                     <div class="mt-3">
                                         <h4><?php echo $prenom ?> <?php echo $nom ?> </h4>
                                         <p class="text-secondary mb-1"><?php echo $role ?></p>
-                                        <button type="submit" class="btn btn-outline-primary">Modifier</button>
+                                        <input type="submit" class="btn btn-outline-primary" value="modifier ce compte" name="modif" >
                                         <input type="submit" class="btn btn-outline-primary"  value="Supprimer ce compte" name="supp">
                                     </div>
                                 </div>
@@ -184,7 +192,12 @@ if(isset($_POST['supp']))
                                         <h6 class="mb-0">role</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" name=role class="form-control" value="<?php echo $role ?>">
+                                    <select name="role">
+                                    <option value="0" selected="selected">choisir un role</option>
+                                    <option value="artiste"> artiste</option>
+                                     <option value="client"> client</option>
+                                     </select>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -192,9 +205,34 @@ if(isset($_POST['supp']))
                         </div>
 
             </form>
-            <script src="../../script.js">
+            <script >
+                
+                function test()
+{
+    var nom=f.nom.value
+    var prenom=f.prenom.value
+    var email=f.email.value
+    var pass=f.pass.value
+    var login=f.login.value
+    var role=f.role.value
+    if(login.length==0 || pass.length==0 || email.length==0 || nom.length==0 || prenom.length==0 || role==0 )
+    {
+        alert("les champs sont vide")
+    }
+    else if(pass.length<8)
+        alert("tapez un mot de passe avec 8 caracetere au minimum")
+    else if(email.substring(email.indexOf('@'))!='@esprit.tn')
+    {
+        console.log(email.substring(email.indexOf('@')))
+        alert("tapez un email de esprit")
+    }
+    else
+    {
+        alert("succes !!")
+    }
 
 
+}
             </script>
             <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
             <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -208,7 +246,8 @@ if(isset($_POST['supp']))
 $error="";
 $user=null;
 $usere= new utilisateurC();
-
+if(isset($_POST['supp']))
+{
 if(      isset($_POST['nom']) &&
     isset($_POST['prenom']) &&
     isset($_POST['email']) &&
@@ -238,5 +277,6 @@ if(      isset($_POST['nom']) &&
     else {
         $error="Missing information !";
     }
+}
 }
 ?>
