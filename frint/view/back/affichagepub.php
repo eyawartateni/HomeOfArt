@@ -1,16 +1,22 @@
 <?php
-
 require_once ('index.html');
 include_once "../../config.php";
 include_once '../../Model/publication.php';
 include_once '../../Controller/publicationC.php';
 
 
+$pubC = new PublicationC();
+$db= config::getConnexion();
+
+
 ?>
+
 
 
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     
     <title>Publication</title>
@@ -20,27 +26,30 @@ include_once '../../Controller/publicationC.php';
   
     <style type="text/css">
 
-    .center
+.center
     {
       width: 60%;
       margin-right: auto;
       margin-left: auto;
       background:#D3D3D3;
-
       
-      
+      min-height: 800px;
+      padding : 50 px 50px ;
     }
 
     .publication
     {
       display: flex;
       flex-wrap: wrap;
-      align-content: space-around;
+      align-content: space-around; 
+      
+  
     }
 
     .card
     {
-      margin-right: 60px
+      margin-right: 20px
+      
     }
 
     body
@@ -48,7 +57,7 @@ include_once '../../Controller/publicationC.php';
       width: 100%;
       height: 100vh;
       background :#eee;
-     }
+    }
 
     </style>
 
@@ -58,26 +67,39 @@ include_once '../../Controller/publicationC.php';
 </head>
 <body>
     
-      <div class="center"><br><br><br>
+    <div class="center"><br><br><br>
+      <div class="py-3 text-center">
+    <h1>Publication</h1><br><br><br>
+   </div>
+   
+  
 
-        <h1>Details :</h1><br>
+
+
+
 
 <div class="publication">   
 
-<div class="card mb-3" style="max-width: 100%;">
-  <div class="row ">
-    <div class="col-md-4">
-    <img src="image/<?php echo $_GET['image_name'] ?>" class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><?php echo $_GET['titre']  ?> </h5>
-        <p class="card-text"><?php echo $_GET['description']  ?></p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
+<?php
+
+
+$req=$pubC->afficherPublication();
+
+while($reponse=$req->fetch(PDO::FETCH_OBJ)){?>
+
+<div class="card text-dark bg-light mb-3" style="width: 15rem;">
+
+<img src="image/<?php echo $reponse->image_name ?>" class="card-img-top" alt="...">
+<div class="card-body" >
+<h5 class="card-title"> <?php echo $reponse->titre; ?> </h5>
+<p class="card-text"><?php echo $reponse->description; ?> </p>
+<a href="plus.php?titre=<?php echo $reponse->titre; ?>&description=<?php echo $reponse->description ?>&image_name=<?php echo $reponse->image_name  ?>  " class="btn btn-primary">Plus</a>
 </div>
+</div>
+
+
+<?php  }
+?>
 
         </div>
       </div>
