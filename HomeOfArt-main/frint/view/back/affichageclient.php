@@ -30,7 +30,7 @@ $db= config::getConnexion();
       width: 60%;
       margin-right: auto;
       margin-left: auto;
-      background:#00BFFF;
+      
       
       min-height: 800px;
       padding : 50 px 50px ;
