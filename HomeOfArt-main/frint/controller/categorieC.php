@@ -1,32 +1,26 @@
 <?php
 include_once "../../config.php";
-require_once "../../model/categorie.php";
+require_once "../../Model/categorie.php";
 
 
 class categorieC{
-function  ajouterCategorie($nom_cat,$stat_cat){
+
+ function  ajouterCategorie($nom_cat , $stat_cat)
+ {
+     $sql= "INSERT INTO categorie(nom_cat,stat_cat) VALUES( '$nom_cat','$stat_cat')";
+     $db= config::getConnexion();
+     try
+     {
+    $query=$db->prepare($sql);
+    $query->execute();
+     }catch (Exception $e)
+     {
+        die('Erreur:'.$e->getMessage());
+     }
+ }
 
 
-    $sql = "INSERT INTO categorie (nom_cat,stat_cat) VALUES ('nom_cat','stat_cat')";
-
-    $db= config::getConnexion();
-
-    try{
-          $query =$db->prepare($sql);
-          $query->execute();
-
-       }
-
-    catch(Exception $e)
-    {
-        die('Erreur: '.$e->getMessage());
-    }
-
-  }
-
-
-
-  function affichercategorie()
+  function afficherCategorie()
   {
      $sql="SELECT * FROM categorie";
      $db= config::getConnexion();
@@ -53,7 +47,6 @@ function  ajouterCategorie($nom_cat,$stat_cat){
    
   }
 
-  
        function SupprimerCategorie($nom_cat)
      {
            $sql="DELETE FROM categorie WHERE nom_cat= '$nom_cat'";
@@ -72,14 +65,35 @@ function  ajouterCategorie($nom_cat,$stat_cat){
            }
        }
 
-    //  function RechercherProduit($idproduit)
-    //  {
+     function RechercherProduit($nom_cat)
+     {
 
-    //    $db = config::getConnexion();
+       $db = config::getConnexion();
 
-    //  $sql = "SELECT * FROM produit where idproduit='$idproduit'";
-    //  $query=$db->prepare($sql);
-    //  $query->execute();
-    //  }
+     $sql = "SELECT * FROM categorie where nom_cat='$nom_cat'";
+     $query=$db->prepare($sql);
+     $query->execute();
+     }
+
+
+
+
+
+function recuperercategorie($nom_cat){
+    $sql="SELECT * from categorie where nom_cat='$nom_cat'";
+    $db = config::getConnexion();
+    try{
+        $query=$db->prepare($sql);
+        $query->execute();
+
+        $user=$query->fetch();
+        return $user;
+    }
+        catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }
 }
+}
+
+
  ?>

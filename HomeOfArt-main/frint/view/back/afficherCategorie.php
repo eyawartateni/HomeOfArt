@@ -2,21 +2,13 @@
 ///////////////ajout////////////////////
 require_once ('index.html');
 
-include "../../Model/produit.php";
 include "../../Model/categorie.php";
-include_once  '../../Controller/produitC.php';
-
 include_once  '../../Controller/categorieC.php';
 
 
 $error ="";
 $user=null;
-$userC =new produitC();
-
-$cat = new categorieC();
-
-
-
+$userC =new categorieC();
 ?>
 
 
@@ -28,8 +20,8 @@ $cat = new categorieC();
 
 
 <!DOCTYPE html>
-<html lang="en">                
-            </div>
+<html lang="en">
+</div>
             <div id="layoutSidenav_content">
                 <main>
                     <div style="  width: 80%;
@@ -41,11 +33,11 @@ $cat = new categorieC();
   top:20%;
   left:17%;
   ">
-                        <h1 id="tab" class="mt-4" >Produit</h1>
+                        <h1 id="tab" class="mt-4" >Categorie</h1>
                         <ol class="breadcrumb mb-4">
                             
-                            <li class="breadcrumb-item active">produit</li>
-                            <li  class="breadcrumb-item"> <a href="afficherCategorie.php">Categorie</a>  </li>
+                            <li class="breadcrumb-item active"><a href="afficherProduit.php">produit</a></li>
+                            <li  class="breadcrumb-item active">  Categorie </li>
                         </ol>
                         <div class="card mb-4">
 
@@ -57,32 +49,10 @@ $cat = new categorieC();
 
 <form action="" method="POST" enctype="multipart/form-data" class="w-50">
 <br>
-<input type="text"  name="libelle" id="libelle" class="form-control"  placeholder="libelle" autocomplete="off">
+<input type="text"  name="nom_cat" id="nom_cat" class="form-control"  placeholder="nom_cat" autocomplete="off">
 
-
-          <input type="text" name="categorie" id="categorie" class="form-control" list="pss" placeholder="categorie " autocomplete="off">
-
- <datalist id="pss">
-     
-<?php
-         
-         $pes=$cat->affichercategorie();
-         while($rep=$pes->fetch(PDO::FETCH_OBJ)){?>
-  <option value="<?php echo $rep->nom_cat?>"> 
+    <input type="number" name="stat_cat" min="0" max="200" id="stat_cat" class="form-control" placeholder="stat_cat" autocomplete="off">
   
-  <?php  }
-?>
-
-</datalist>
-          
-
-
-    <input type="number" name="quantite" min="0" max="200" id="quantite" class="form-control" placeholder="quantite" autocomplete="off">
-    <input type="number" name="prix" min="0" max="200" id="prix" class="form-control" placeholder="prix " autocomplete="off">
-
-      <input type="text" name="descriptionP" id="descriptionP" class="form-control " placeholder="description" autocomplete="off" >
-    
-          <input class="form-control" type="file" name="fichier"><br><br>
       <br>
       
      <div class="d-flex justify-content-center">
@@ -97,56 +67,21 @@ $cat = new categorieC();
 if(isset ($_POST['ajouter']))
 {
     extract($_POST);
-    //print_r($_FILES['fichier']);
-$content_dir = 'image/';
-
-$tmp_file = $_FILES['fichier']['tmp_name'];
-
-if (!is_uploaded_file($tmp_file))
-{
-
-    exit('fichier introuvable');
-}
-
-$type_file = $_FILES['fichier']['type'];
-
-if (!strstr($type_file,'jpeg') && !strstr($type_file,'png') )
-{
-    exit("Ce fichier n'est pas une image");
-}
-
-$name_file= time().'.jpeg';
-
-if(!move_uploaded_file($tmp_file,$content_dir.$name_file))
-{
-    exit('impossible de copier le fichier');
-}
+ 
 
 if(
-isset($_POST['libelle']) &&
-isset($_POST['categorie']) &&
-isset ($_POST['prix']) &&
-isset($_POST['quantite'])&&
-isset($_POST['descriptionP'])
+isset($_POST['nom_cat']) &&
+isset($_POST['stat_cat'])
 )
 {
     if(
-    !empty($_POST['libelle']) &&
-    !empty($_POST['categorie']) &&
-    !empty($_POST['prix']) &&
-    !empty($_POST['quantite']) &&
-    !empty($_POST['descriptionP']) 
+    !empty($_POST['nom_cat']) &&
+    !empty($_POST['stat_cat'])
     
     )
     {
-        $user = new produit(
-            $_POST['libelle'],
-            $_POST['categorie'],
-            $_POST['prix'],
-            $_POST['quantite'],
-            $_POST['descriptionP']
-        );
-        $userC->ajouterProduit($user,$name_file);
+        
+        $userC->ajouterCategorie($_POST['nom_cat'],$_POST['stat_cat']);
     }
 else 
 $error = "Missing information";
@@ -157,11 +92,11 @@ $error = "Missing information";
 
 
 
-                                              <!-- affichage produit -->
+                                              <!-- affichage categorie -->
 
 <?php 
-$utilisateurC= new produitC();
-$listeUsers= $utilisateurC->afficherProduit();
+$utilisateurC= new categorieC();
+$listeUsers= $utilisateurC->afficherCategorie();
 ?>
 </div>
             <div class="card-body">
@@ -170,22 +105,19 @@ $listeUsers= $utilisateurC->afficherProduit();
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i id="liste" class="fas fa-table mr-1"></i>
-                                Liste des Produit
+                                Liste des categories
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                            <th>id Produit</th>
-                                            <th>libelle</th>
-                                                <th>categorie</th>
-                                                <th>prix</th>
-                                                <th>description</th>
-                                                <th>quantite</th>
-                                                <th>Supprimer</th>
-                                                <th>Modifier</th>
-                                                
+                                                <th>nom_cat</th>
+                                                <th>stat_cat</th>
+                                                <th>supprimer</th>
+                                                <th>modifier</th>
+                                             
+                                        
                                             </tr>
                                         </thead>
                                        
@@ -194,20 +126,16 @@ $listeUsers= $utilisateurC->afficherProduit();
    foreach($listeUsers as $user) {
     ?>
     <tr>
-    <td><?php echo $user['idproduit'] ;?></td>
-   <td><?php echo $user['libelle'] ;?></td>
-   <td><?php echo $user['categorie'] ;?></td>
-   <td><?php echo $user['prix']; ?></td>
-   <td><?php echo $user['descriptionP']; ?></td>
-   <td><?php echo $user['quantite']; ?></td>
+   <td><?php echo $user['nom_cat'] ;?></td>
+   <td><?php echo $user['stat_cat']; ?></td>
    <td>
-   <form method="POST" action="supprod.php">
+   <form method="POST" action="supcat.php">
    <i class="fas fa-trash-alt btndelete"></i>	<input  type="submit" name="supprimer" value="supprimer">
-						<input type="hidden" value=<?PHP echo $user['idproduit']; ?> name="idproduit">
+						<input type="hidden" value=<?PHP echo $user['nom_cat']; ?> name="nom_cat">
 						</form>
             </td>
             <td><i class="fas fa-edit btnedit"></i>
-					<a href="modprod.php?idproduit=<?PHP echo $user['idproduit']; ?>">modifier</a>
+					<a href="modcat.php?nom_cat=<?PHP echo $user['nom_cat']; ?>">modifier</a>
                    
             </td>
           
