@@ -43,7 +43,7 @@
               <a href="./afficherPub.php" class="nav-link scroll-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="/web/frint/view/afficherEvent.php" class="nav-link">Evénements</a>
+              <a href="./afficherEvent.php" class="nav-link">Evénements</a>
             </li>
             <li class="nav-item">
               <a href="#about" class="nav-link scroll-link">About</a>

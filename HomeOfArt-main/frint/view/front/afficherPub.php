@@ -5,6 +5,7 @@ include_once '../../model/produit.php';
 include_once '../../controller/Cproduit.php';
 include_once '../../model/categorie.php';
 include_once '../../controller/categorieC.php';
+
 session_start();
 $prod = new Cproduit();
 $cat = new categorieC();

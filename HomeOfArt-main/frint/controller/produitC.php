@@ -3,6 +3,7 @@ include_once "../../config.php";
 require_once "../../model/produit.php";
 
 
+
 class produitC{
 
   function  ajouterProduit($user , $name_file)
