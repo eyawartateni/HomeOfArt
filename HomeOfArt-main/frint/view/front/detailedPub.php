@@ -1,11 +1,15 @@
 <?php
-
+session_start();
 require_once ('include/header.php');
 include_once "../../config.php";
 include_once '../../model/produit.php';
-include_once '../../controller/Cproduit.php';
+include_once '../../controller/produitC.php';
+include_once '../../model/panier.php';
+include_once '../../controller/panierC.php';
+
+$idclient=$_SESSION['id'];
 $db= config::getConnexion();
-$prod = new Cproduit();
+$prod = new produitC();
 $condi=0;
 ?>
 <html>
@@ -25,10 +29,19 @@ $condi=0;
         <h1> <?php echo $_GET['libelle']  ?> </h1>
         <div class="price"><?php echo $_GET['prix']  ?>  DNT </div>
         <p> quantite disponible : <?php echo $_GET['quantite']  ?>  </p>
-        <form class="form">
+
+
+        <form class="form" action="ajouterPanier.php" method="post">
+        <input type="hidden" id="idclient" name="idclient" value="$idclient">
+                   <input type="hidden" id="image" name="image" value="./include/image/africa.jpg">
+                  <input type="hidden" id="nom" name="nom" value="tableau mother afric">
+                  <input type="hidden" id="prix" name="prix" value="500.60 ">
+                    <input type="hidden" id="quantite" name="quantite" value="1">
           <input type="text" placeholder="1">
-          <a href="cart.html" class="addCart">Add To Cart</a>
+          <button type="submit" class="addCart">Add to cart</button>
         </form>
+
+
         <h3>Product Detail</h3>
         <p> <?php echo $_GET['descriptionP'] ?> </p>
       </div>

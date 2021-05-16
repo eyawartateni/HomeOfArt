@@ -79,44 +79,20 @@ class CommandeC
         }
     }
 
-    function modifierCommande($refcommande,$idClt,$idProduit,$adresse,$prixtot, $idPanier)
+   
+    function modifiercommande($refcommande,$etat)
     {
-         $sql = "UPDATE Commande SET idClt='$idClt',idProduit='$idProduit',adresse='$adresse' ,prixtot='$prixtot',  idPanier='$idPanier' WHERE refcommande='$refcommande'";
- 
-         $db= config::getConnexion();
- 
-         $query=$db->prepare($sql);
-         $query->execute();
-     
-    }
-   /* function modifierCommande($Commande,$refcommande){
-        try {
-            $db = config::getConnexion();
-            $query = $db->prepare(
-                'UPDATE Commande SET 
-                    idClt = :idClt, 
-                    idProduit = :idProduit,
-                    adresse = :adresse,
-                    prixtot = :prixtot,
-                    date, idPanier = :date, idPanier
-                WHERE refcommande = :refcommande'
-            );
-            $query->execute([
-                'idClt' => $Commande->getIdClient(),
-                'idProduit' => $Commande->getnomProd(),
-                'adresse' => $Commande-> getIdProduit(),
-                'prixtot' => $Commande->getQuantite(),
-                'date, idPanier' => $Commande->getPrix(),
-                'refcommande' => $refcommande
-            ]);
-            echo $query->rowCount() . " records UPDATED successfully <br>";
-        } catch (PDOException $e) {
-            $e->getMessage();
+        $sql="update commande set  etat='$etat' where refcommande='$refcommande'";
+        $db = config::getConnexion();
+        try
+        {
+            $db->query($sql);
         }
-		
-    }*/
-    
-
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
 
 function recupererCommande($refcommande){
     $sql="SELECT * from Commande where refcommande=$refcommande";

@@ -82,14 +82,14 @@ $commandeC=new CommandeC();
       <th >idclient</th>
       <th >etat</th>
       <th >detail</th>
-
-	 
+   
     </tr>
   </thead>
   <tbody>   <?php
   	$listeCom=$commandeC->afficherCommande(); 
                                    
                                         foreach($listeCom as $Commande){
+                                          
                                         ?>
                                         <tr>
 										<td><?PHP echo $Commande['refcommande']; ?></td>    
@@ -97,15 +97,24 @@ $commandeC=new CommandeC();
                 	<td><?PHP echo $Commande['idclient']; ?></td>
 					<td><?PHP echo $Commande['etat']; ?></td>
                   <td><?PHP echo $Commande['detail']; ?></td>
+
+
 			
-                  
-                                            
+
+
                                       </tr>
                                 <?php
                                 }
                                 ?>
                                     </tbody>
                                 </table>
+                                
+                            <form action="modifierCommande.php" method="POST">
+                              
+                              <input type="hidden" id="refcommande" name="refcommande" value="<?php echo $row["refcommande"] ?>">
+                               <input type="hidden" id="etat" name="etat" value="CONFIRMEE">
+                                          <input class="btn btn-secondary"  style="color:black" type="submit" value="modifier">
+                                      
                                 <a  class="btn btn-secondary " style="color:black" href="rechercherCom.php">rechercher</a>
 		<a  class="btn btn-secondary " style="color:black" href="trierCom.php">trier</a>
                                 </div>

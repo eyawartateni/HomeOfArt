@@ -2,12 +2,12 @@
 require_once ('include/header.php');
 include_once "../../config.php";
 include_once '../../model/produit.php';
-include_once '../../controller/Cproduit.php';
+include_once '../../controller/produitC.php';
 include_once '../../model/categorie.php';
 include_once '../../controller/categorieC.php';
 
 session_start();
-$prod = new Cproduit();
+$prod = new produitC();
 $cat = new categorieC();
 $db= config::getConnexion();
 ?>

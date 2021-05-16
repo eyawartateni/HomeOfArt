@@ -66,7 +66,7 @@
               <a href="./ProfilUser.php" class="nav-link scroll-link">Account</a>
             </li>
             <li class="nav-item">
-              <a href="cart.html" class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
+              <a href="./afficherPanier.php" class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
             </li>
             
             
@@ -74,7 +74,7 @@
           </ul>
         </div>
 
-        <a href="cart.html" class="cart-icon">
+        <a href="./afficherPanier.php" class="cart-icon">
           <i class="bx bx-shopping-bag"></i>
         </a>
 
@@ -84,4 +84,4 @@
       </div>
      
     </nav>
-
+</html>
