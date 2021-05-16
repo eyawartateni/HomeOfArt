@@ -27,6 +27,26 @@ class CommentaireC{
 
    }
 
+   function  ajouterCommentaireC_client($messages,$id_publication_commentaire,$id_client_commentaire){
+
+
+      $sql = "INSERT INTO commentaire (messages,date_commentaire,id_publication_commentaire,id_client_commentaire) VALUES ('$messages',NOW(),'$id_publication_commentaire','$id_client_commentaire')";
+ 
+      $db= config::getConnexion();
+ 
+      try{
+            $query =$db->prepare($sql);
+            $query->execute();
+ 
+         }
+ 
+      catch(Exception $e)
+      {
+          die('Erreur: '.$e->getMessage());
+      }
+ 
+    }
+
   
 
 
@@ -153,6 +173,8 @@ function afficherCommentaires()
 				die('Erreur: '.$e->getMessage());
 			}
 		}
+
+
 
 
 

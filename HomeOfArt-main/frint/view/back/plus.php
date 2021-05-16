@@ -67,7 +67,7 @@ include_once '../../Controller/publicationC.php';
 <div class="card mb-3" style="max-width: 100%;">
   <div class="row ">
     <div class="col-md-4">
-    <img src="image/<?php echo $_GET['image_name'] ?>" class="card-img" alt="...">
+    <img src="../front/include/images/<?php echo $_GET['image_name'] ?>" class="card-img" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">

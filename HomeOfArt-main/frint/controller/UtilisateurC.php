@@ -5,9 +5,9 @@ require_once "../../model/Utilisateur.php";
 
 class utilisateurC
 {
-  function ajouterUtilisateur($user)
+  function ajouterUtilisateur($user,$name_file)
   {
-      $sql ="INSERT INTO utilisateur(nom, prenom, email, login, password) VALUES (:nom,:prenom,:email,:login,:password)";
+      $sql ="INSERT INTO utilisateur(nom, prenom, email, login, password,image_client) VALUES (:nom,:prenom,:email,:login,:password,'$name_file')";
       $db= config::getConnexion();
       try{
           $query =$db ->prepare($sql);

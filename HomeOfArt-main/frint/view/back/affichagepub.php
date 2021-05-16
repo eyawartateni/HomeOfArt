@@ -89,7 +89,7 @@ while($reponse=$req->fetch(PDO::FETCH_OBJ)){?>
 
 <div class="card text-dark bg-light mb-3" style="width: 15rem;">
 
-<img src="image/<?php echo $reponse->image_name ?>" class="card-img-top" alt="...">
+<img src="../front/include/images/<?php echo $reponse->image_name ?>" class="card-img-top" alt="...">
 <div class="card-body" >
 <h5 class="card-title"> <?php echo $reponse->titre; ?> </h5>
 <p class="card-text"><?php echo $reponse->description; ?> </p>

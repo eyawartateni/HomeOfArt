@@ -5,8 +5,8 @@ include_once "../../config.php";
 include_once '../../Model/commentaire.php';
 include_once '../../Controller/commentaireC.php';
 
-$conn=mysqli_connect("localhost","root","","atelierphp2");
-$result = mysqli_query($conn, "SELECT * FROM commentaire");
+$conn=mysqli_connect("localhost","root","","seemyart");
+$result = mysqli_query($conn, "SELECT * FROM likes");
 $artnum=mysqli_num_rows($result);
 
 ?>
@@ -32,14 +32,14 @@ $artnum=mysqli_num_rows($result);
     // Draw the Column chart for total Sales per Cities
     function drawTotalSales() {
         var data = google.visualization.arrayToDataTable([
-          ['id_client_commentaire', 'id_commentaire'],
+          ['id_client', 'id_like'],
           <?php
      if($artnum >0)
       {
     ?>
          <?php
        while($row = mysqli_fetch_array($result)){
-        echo"['".$row['id_client_commentaire']."',".$row['id_commentaire']."],";
+        echo"['".$row['id_client']."',".$row['id_like']."],";
     }
          ?>
            <?php
@@ -48,7 +48,7 @@ $artnum=mysqli_num_rows($result);
         ]);
       
         var options = {
-            title: 'COMMENTAIRE ',
+            title: 'LIKE ',
            
             height:500,
             width:1500,
@@ -78,7 +78,7 @@ $artnum=mysqli_num_rows($result);
                        width:400,
                        height:300,
                        legend: 'none',
-                       title: 'Commentaire',
+                       title: 'LIKE',
             subtitle: '',
             animation:{
         duration: 1000,

@@ -33,6 +33,7 @@ if($_SESSION['act']=="0")
 {
     header('location:login.php');
 }
+$login_client_image=$_SESSION['image_client'];
 
 ?>
     <!DOCTYPE html>
@@ -127,13 +128,16 @@ if($_SESSION['act']=="0")
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                                
+                                    <img src="./include/images/<?php echo $login_client_image?>" alt="Admin" class="rounded-circle" width="150">
                                     <div class="mt-3">
                                         <h4><?php echo $prenom ?> <?php echo $nom ?> </h4>
                                         <p class="text-secondary mb-1"><?php echo $role ?></p>
                                         <br>
                                         <input type="submit" class="btn btn-outline-primary" value="modifier ce compte" name="modif" >
                                         <input type="submit" class="btn btn-outline-primary"  value="Supprimer ce compte" name="supp">
+                                        <a href="Ajouter_publication.php"  class="btn btn-outline-primary">Partager</a>
+                                        <span><a href="index_client.php"><i class="fa fa-envelope"></i></a></span>
                                     </div>
                                 </div>
                             </div>

@@ -26,6 +26,33 @@ class ReponseC{
  
     }
 
+    function  ajouterReponseC_client($messages,$id_commentaire_reponse,$id_client_reponse){
+
+
+        $sql = "INSERT INTO reponse (messages,date_reponse,id_commentaire_reponse,id_client_reponse) VALUES ('$messages',NOW(),'$id_commentaire_reponse','$id_client_reponse')";
+   
+        $db= config::getConnexion();
+   
+        try{
+              $query =$db->prepare($sql);
+              $query->execute();
+   
+           }
+   
+        catch(Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+   
+      }
+
+
+
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     function afficherReponse($id_commentaire_reponse)
    {
       $sql="SELECT * FROM reponse WHERE id_commentaire_reponse= '$id_commentaire_reponse'";
@@ -104,6 +131,54 @@ function SupprimerReponse($id_reponse)
         die('Erreur: '.$e->getMessage());
     }
 }
+
+
+
+    
+function  ajouterlike_client($id_publication,$id_client){
+
+
+    $sql = "INSERT INTO likes (id_publication,id_client) VALUES ('$id_publication','$id_client')";
+
+    $db= config::getConnexion();
+
+    try{
+          $query =$db->prepare($sql);
+          $query->execute();
+
+       }
+
+    catch(Exception $e)
+    {
+        die('Erreur: '.$e->getMessage());
+    }
+
+  }
+
+  function  ajouterdislike_client($id_publication,$id_client){
+
+
+    $sql = "INSERT INTO dislikes (id_publication,id_client) VALUES ('$id_publication','$id_client')";
+
+    $db= config::getConnexion();
+
+    try{
+          $query =$db->prepare($sql);
+          $query->execute();
+
+       }
+
+    catch(Exception $e)
+    {
+        die('Erreur: '.$e->getMessage());
+    }
+
+  }
+  /////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 

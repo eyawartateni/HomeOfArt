@@ -2,11 +2,38 @@
  include_once "../../controller/UtilisateurC.php";
  include_once "../../model/Utilisateur.php";
  include_once "../../config.php";
- require_once ('include/header.php');
     $error="";
     $user=null;
     $userC= new utilisateurC();
 session_start();
+
+if(isset ($_POST['olla'])){
+
+    extract($_POST);
+$content_dir = './include/images/';
+
+$tmp_file = $_FILES['fichier']['tmp_name'];
+
+if (!is_uploaded_file($tmp_file)){
+
+    exit('fichier introuvable');
+}
+
+$type_file = $_FILES['fichier']['type'];
+
+if (!strstr($type_file,'jpeg') && !strstr($type_file,'png') ){
+
+    exit("Ce fichier n'est pas une image");
+}
+
+$name_file= time().'.jpeg';
+
+if(!move_uploaded_file($tmp_file,$content_dir.$name_file)){
+
+    exit('impossible de copier le fichier');
+}
+
+
   if(isset($_POST["captcha"])&&$_POST["captcha"]!=""&&$_SESSION["code"]==$_POST["captcha"])
   {
     $status = "<p style='color:#FFFFFF; font-size:20px'>
@@ -32,7 +59,7 @@ session_start();
                     $_POST['login'],
                     $_POST['pass']
                 );
-                $userC->ajouterUtilisateur($user);
+                $userC->ajouterUtilisateur($user,$name_file);
                 header('location:login.php');
             }
             else {
@@ -45,7 +72,7 @@ session_start();
     $status = "<p style='color:#FFFFFF; font-size:20px'>
     <span style='background-color:#FF0000;'>Le code captcha entré ne correspond pas! Veuillez réessayer.</span></p>";
   }
-    
+}  
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +86,6 @@ session_start();
         <title>register</title>
         <link href="css/a.css" rel="stylesheet" />
         <?php
-    require_once ('include/header.php');
     ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
@@ -73,7 +99,7 @@ session_start();
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
                                     <div class="card-body">
-                                        <form name="f" action="" method="POST" onsubmit="test();">
+                                        <form name="f" action="" method="POST" enctype="multipart/form-data" onsubmit="test(); ">
                                         
                                             <div class="form-row">
                                                 <div class="col-md-6">
@@ -108,6 +134,12 @@ session_start();
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
                                                         <input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputConfirmPassword">Votre image</label>
+                                                        <input class="form-control" type="file" name="fichier"><br><br>
                                                     </div>
                                                 </div>
                                             </div>

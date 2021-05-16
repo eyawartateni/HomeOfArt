@@ -27,6 +27,7 @@
                     $liste=$userC->Rechercherid($_POST['email'],$_POST['pass']);
                     $_SESSION['act']="1";
                     $_SESSION['id']=$liste['id'];
+                    $_SESSION['image_client']=$liste['image_client'];
                     $_SESSION['nom']=$liste['nom'];
                     $_SESSION['prenom']=$liste['prenom'];
                     $_SESSION['email']=$liste['email'];
