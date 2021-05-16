@@ -13,16 +13,50 @@ $livraisonC=new LivraisonC();
 ?>
 <html>
 	<head>
+	<title> liste livraison </title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-		<title> Afficher liste livraison </title>
 		
+		<style type="text/css">
+.center
+    {
+      width: 60%;
+      margin-right: auto;
+      margin-left: auto;
+      background:#FFFFFF;
+      
+      min-height: 800px;
+      padding : 50 px 50px ;
+    }
+    .publication
+    {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around; 
+      
+  
+    }
+
+    .card
+    {
+      margin-right: 20px
+      
+    }
+
+    body
+    {
+      width: 100%;
+      height: 100vh;
+      background :#FFFFFF;
+    }
+    </style>
    
     </head>
     <body>
-	
-	<img src="images/img3.png" alt="image" >
+	<div class="center">
+	<br>
+	<br>
 	
 	<form  action="rechercherLivraison.php"  method="POST">
 	<input type="submit" class="btn btn-warning " href="rechercherLivraison.php" style="color:black" value="Serach" name="submit">
@@ -89,3 +123,4 @@ $livraisonC=new LivraisonC();
 		</table>
 	</body>
 </html>
+</div>

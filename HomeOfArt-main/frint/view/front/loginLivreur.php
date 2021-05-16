@@ -1,52 +1,46 @@
 <?php 
     session_start();
-    include_once "../../controller/UtilisateurC.php";
-    include_once "../../model/Utilisateur.php";
+    include_once "../../controller/livreurC.php";
+    include_once "../../model/livreur.php";
     include_once "../../config.php";
     
 
 
     $message="";
     $user=null;
-    $userC= new utilisateurC();
-    $_SESSION['act']="0";
-    if(      isset($_POST['email']) &&
-             isset($_POST['pass'])
+    $userC= new livreurC();
+    
+    if(      isset($_POST['idLivreur']) 
+             
              
       )
     {
-        if(!empty($_POST['email']) &&
-            !empty($_POST['pass'])
+        if(!empty($_POST['idLivreur']) 
+            
           )
             {
-                $message=$userC->connexionUser($_POST['email'],$_POST['pass']);
+                $message=$userC->connexionUser($_POST['idLivreur']);
                 
                 
-                if($message!='pseudo ou le mot de passe est incorrect')
+                if($message!=' identifiant est incorrect')
                 {
-                    $liste=$userC->Rechercherid($_POST['email'],$_POST['pass']);
-                    $_SESSION['act']="1";
-                    $_SESSION['id']=$liste['id'];
-                    $_SESSION['image_client']=$liste['image_client'];
-                    $_SESSION['nom']=$liste['nom'];
-                    $_SESSION['prenom']=$liste['prenom'];
+                    $liste=$userC->Rechercherid($_POST['idLivreur']);
+                    
+                    $_SESSION['idLivreur']=$liste['idLivreur'];
+                    $_SESSION['nomLivreur']=$liste['nomLivreur'];
+                    $_SESSION['prenomLivreur']=$liste['prenomLivreur'];
+                    $_SESSION['adresse']=$liste['adresse'];
                     $_SESSION['email']=$liste['email'];
-                    $_SESSION['login']=$liste['login'];
-                    $_SESSION['password']=$liste['password'];
-                    $_SESSION['role']=$liste['role'];
-                    if($_SESSION['role']=="admin")
-                    {
-                        header('location:../back/index.html');
-                    }
-                    else
-                    {
-                        header('location:ProfilUser.php');
-                    }
+                    $_SESSION['tel']=$liste['tel'];
+                    $_SESSION['salaire']=$liste['salaire'];
+                    
+                        header('location:../back/service.php');
+                    
                    
                 }
                 else
                 {
-                    $message='pseudo ou le mot de passe est incorrect';
+                    $message='identifiant est incorrect';
                 }
             }
         
@@ -85,32 +79,24 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
                                         <form action="" method="POST">
+                                           
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                                <input class="form-control py-4" name="email" id="email" type="email" placeholder="Enter email address" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1" for="inputPassword">Password</label>
-                                                <input class="form-control py-4" name="pass" id="pass" type="password" placeholder="Enter password" />
+                                                <label class="small mb-1" for="inputid">Identifiant</label>
+                                                <input class="form-control py-4" name="idLivreur" id="idLivreur"  placeholder="Enter identidiant" />
                                             </div>
                                             <div class="form-group">
                                                 <div class="custom-control custom-checkbox">
                                                     <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                                    <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
+                                                    <label class="custom-control-label" for="rememberPasswordCheck">Remember identifiant</label>
                                                 </div>
                                             </div>
-                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.php">Forgot Password?</a>
-                                            </div>
+                                            
                                             <div class="form-group mt-4 mb-0"><button type="submit" name="olla" class="btn btn-primary btn-block" >Login</button></div>
+                                            
                                         </form>
                                     </div>
-                                    <div class="card-footer text-center">
-                                        <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                    <div class="small"><a href="loginLivreur.php">Espace Livreur</a></div>
-                                    </div>
+                                   
+                                   
                                 </div>
                             </div>
                         </div>

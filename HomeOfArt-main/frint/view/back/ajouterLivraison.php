@@ -107,7 +107,7 @@ if (
          foreach($liste1 as $commande) {
              ?>
              <option  >
-               <?php  echo $commande['idCommande'] ?>
+               <?php  echo $commande['refcommande'] ?>
                
                </option>
             <?php

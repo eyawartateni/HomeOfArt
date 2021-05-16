@@ -24,7 +24,39 @@ $db= config::getConnexion();
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin
     ="anonymous">
-    
+    <style type="text/css">
+.center
+    {
+      width: 60%;
+      margin-right: auto;
+      margin-left: auto;
+      background:#FFFFFF;
+      
+      min-height: 800px;
+      padding : 50 px 50px ;
+    }
+    .publication
+    {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around; 
+      
+  
+    }
+
+    .card
+    {
+      margin-right: 20px
+      
+    }
+
+    body
+    {
+      width: 100%;
+      height: 100vh;
+      background :#FFFFFF;
+    }
+    </style>
     
 </head>
 <body>

@@ -16,7 +16,8 @@ $livreurC=new LivreurC();
   
 </head>
     <body>
-	<img src="images/img3.png" alt="image" >
+	<br>
+    <br>
 
 <div class="bg-info">	
 <div class="container"> 

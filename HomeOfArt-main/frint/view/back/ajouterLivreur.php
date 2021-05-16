@@ -116,7 +116,7 @@ if (
 <tr>
 <td></td>
 <td>
-<input  class="w-100 btn btn-primary btn-lg" type="submit" onsubmit="return verifier();" value="Envoyer">
+<input  class="w-100 btn btn-primary btn-lg" type="submit" onclick=" verifier();" value="Envoyer">
 </td>
 </tr>
        </table>
@@ -127,4 +127,5 @@ if (
         </div>
     </div>
  </div>
+ <script src="valider.js" > </script>
   </html>

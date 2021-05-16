@@ -146,8 +146,56 @@ class LivreurC
 
 
 
+    function connexionUser($idLivreur)
+    {
+        $sql="SELECT * from livreur where  idLivreur='".$idLivreur."'";
+        $db = config::getConnexion();
+        try{
+        $query =$db ->prepare($sql);
+        $query->execute();
+        $count=$query->rowCount();
+        if($count==0)
+        {
+            $message="identifiant est incorrect";
+        }
+        else
+        {
+            $x=$query->fetch();
+            $message=$x['role'];
+        }
+       }
+       catch (Exception $e)
+       {
+              die('Erreur: '.$e->getMessage());
+          }
+          return $message;
+    }
 
+    function Rechercherid($idLivreur)
+    {
 
+      $db = config::getConnexion();
+
+    $sql = "SELECT * FROM livreur where  idLivreur='$idLivreur'";
+    try{
+    $query=$db->prepare($sql);
+    $query->execute();
+    $count=$query->rowCount();
+        if($count==0)
+        {
+            $message="identifiant est incorrect";
+        }
+        else
+        {
+           $liste=$query->fetch();
+           return $liste;
+        }
+    }
+    catch (Exception $e)
+    {
+           die('Erreur: '.$e->getMessage());
+       }
+    }
 
     
 }

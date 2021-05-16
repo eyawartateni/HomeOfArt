@@ -147,8 +147,21 @@ class LivraisonC
             die('Erreur: ' . $e->getMessage());
         }
     }
+    function RechercherLiv($idLivreur)
+    {
 
+     
 
+    $sql = "SELECT * FROM livraison where  idLivreur='$idLivreur'";
+    $db = config::getConnexion();
+    try{
+        $liste = $db->query($sql);
+        return $liste;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+    }
     
 }
 
