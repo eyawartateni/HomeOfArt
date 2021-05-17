@@ -6,8 +6,9 @@ include_once "../../controller/panierC.php";
 require_once ('include/header.php');
 
 $idclient=$_SESSION['id'];
+$email=$_SESSION['email'];
 
-$mailto ="mayssa.bouzid2000@gmail.com"; // houni t7ot il mail ili bich tibaathlou 
+$mailto =$email; // houni t7ot il mail ili bich tibaathlou 
     $mailSub = "Commande";
     $mailMsg = "Votre commande a ete traite avec succes";
     require 'PHPMailer-master/PHPMailerAutoload.php';

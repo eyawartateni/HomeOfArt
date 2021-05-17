@@ -94,6 +94,8 @@ class CommandeC
         }
     }
 
+
+  
 function recupererCommande($refcommande){
     $sql="SELECT * from Commande where refcommande=$refcommande";
     $db = config::getConnexion();

@@ -134,7 +134,7 @@ foreach ($listpanier as $row)
                     <input type="hidden" id="prixtotal" name="prixtotal" value="<?php echo $S1 ?>">
           <input type="hidden" id="idclient" name="idclient" value="$idclient">
           <input type="hidden" id="detail" name="detail" value="<?php echo $C ?>">
-                    <input type="hidden" id="etat" name="etat" value="CONFIRMEE">
+                    <input type="hidden" id="etat" name="etat" value="EN ATTENTE DE CONFIRMATION">
                     <input type="hidden" id="date" name="date" value="<?php echo $D ?>">
                     <button style="position: relative;left: 918px ;bottom: 25px" class="btn btn-info">PASSER COMMANDE</button>
                 </form>

@@ -35,7 +35,7 @@ $condi=0;
         <input type="hidden" id="idclient" name="idclient" value="$idclient">
                    <input type="hidden" id="image" name="image" value="./include/image/africa.jpg">
                   <input type="hidden" id="nom" name="nom" value="tableau mother afric">
-                  <input type="hidden" id="prix" name="prix" value="500.60 ">
+                  <input type="hidden" id="prix" name="prix" value="500 ">
                     <input type="hidden" id="quantite" name="quantite" value="1">
           <input type="text" placeholder="1">
           <button type="submit" class="addCart">Add to cart</button>

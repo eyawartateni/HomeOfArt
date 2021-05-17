@@ -82,6 +82,7 @@ $commandeC=new CommandeC();
       <th >idclient</th>
       <th >etat</th>
       <th >detail</th>
+      <th >modifier</th>
    
     </tr>
   </thead>
@@ -101,7 +102,7 @@ $commandeC=new CommandeC();
 
 			
 
-
+                 <td> <a class="btn btn-secondary " style="color:black" href="modifierCommande.php?refcommande= <?PHP echo $Commande['refcommande'];?>"> Modifier </a> </td>
                                       </tr>
                                 <?php
                                 }
@@ -109,12 +110,7 @@ $commandeC=new CommandeC();
                                     </tbody>
                                 </table>
                                 
-                            <form action="modifierCommande.php" method="POST">
-                              
-                              <input type="hidden" id="refcommande" name="refcommande" value="<?php echo $row["refcommande"] ?>">
-                               <input type="hidden" id="etat" name="etat" value="CONFIRMEE">
-                                          <input class="btn btn-secondary"  style="color:black" type="submit" value="modifier">
-                                      
+                           
                                 <a  class="btn btn-secondary " style="color:black" href="rechercherCom.php">rechercher</a>
 		<a  class="btn btn-secondary " style="color:black" href="trierCom.php">trier</a>
                                 </div>
