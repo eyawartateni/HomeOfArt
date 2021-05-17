@@ -7,15 +7,13 @@ include_once '../../controller/produitC.php';
 include_once '../../model/panier.php';
 include_once '../../controller/panierC.php';
 
-$idclient=$_SESSION['id'];
+// $idclient=$_SESSION['id'];
 $db= config::getConnexion();
 $prod = new produitC();
 $condi=0;
 ?>
 <html>
 <!-- Product Details -->
-	
-<?php  ?>
 
 <section class="section product-detail">
     <div class="details container-md">

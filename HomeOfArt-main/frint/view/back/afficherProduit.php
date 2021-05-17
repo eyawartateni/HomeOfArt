@@ -29,7 +29,7 @@ $cat = new categorieC();
 
 <!DOCTYPE html>
 <html lang="en">                
-            </div>
+
             <div id="layoutSidenav_content">
                 <main>
                     <div style="  width: 80%;
@@ -171,6 +171,8 @@ $listeUsers= $utilisateurC->afficherProduit();
                             <div class="card-header">
                                 <i id="liste" class="fas fa-table mr-1"></i>
                                 Liste des Produit
+                                <a style="position:absolute; right:4%;" href="exportProduit.php">export</a>
+
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
