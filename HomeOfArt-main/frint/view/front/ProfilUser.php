@@ -107,7 +107,7 @@ $login_client_image=$_SESSION['image_client'];
     </head>
     <body>
     
-    <li value="logout" style="background-color: #04AA6D; color: #ff8800; padding: 12px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 3.5%;font-size: 12px; position:absolute ; top:5px; right:140px;">
+    <li value="logout" style="background-color: #04AA6D; color: #ff8800; padding: 12px 18px; margin: 10px 0; border: none; border-radius: 12px;cursor: pointer; width: 4.5%;font-size: 12px; position:absolute ; top:5px; right:30px;">
                <a href="./logout.php" > logout</a>
             </li>
     
@@ -117,7 +117,7 @@ $login_client_image=$_SESSION['image_client'];
             <!-- Breadcrumb -->
             <nav aria-label="breadcrumb" class="main-breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="affichePub.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="./afficherPub.php">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">User Profile</li>
                 </ol>
             </nav>
@@ -137,7 +137,6 @@ $login_client_image=$_SESSION['image_client'];
                                         <input type="submit" class="btn btn-outline-primary" value="modifier ce compte" name="modif" >
                                         <input type="submit" class="btn btn-outline-primary"  value="Supprimer ce compte" name="supp">
                                         <a href="Ajouter_publication.php"  class="btn btn-outline-primary">Partager</a>
-                                        <span><a href="index_client.php"><i class="fa fa-envelope"></i></a></span>
                                     </div>
                                 </div>
                             </div>

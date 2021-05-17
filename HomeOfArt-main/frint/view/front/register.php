@@ -155,7 +155,7 @@ if(!move_uploaded_file($tmp_file,$content_dir.$name_file)){
    
     
    
-                                            <div class="form-group mt-4 mb-0"><button type="submit" name="olla" class="btn btn-primary btn-block" href="../login.php">Create Account</button></div>
+                                            <div class="form-group mt-4 mb-0"><button type="submit" name="olla" class="btn btn-primary btn-block"  href="../login.php">Create Account</button></div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
@@ -197,6 +197,7 @@ if(!move_uploaded_file($tmp_file,$content_dir.$name_file)){
     if(login.length==0 || pass.length==0 || email.length==0 || nom.length==0 || prenom.length==0)
     {
         alert("les champs sont vide")
+        
     }
     else if(pass.length<8)
         alert("tapez un mot de passe avec 8 caracetere au minimum")

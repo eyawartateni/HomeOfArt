@@ -33,7 +33,7 @@ $req=$comC->afficherReponses();
     {
       width: 100%;
       height: 100vh;
-      background :#FFFAF0;
+      background :#FFFFFF;
      }
     
     .center
@@ -41,7 +41,7 @@ $req=$comC->afficherReponses();
       width: 70%;
       margin-right: auto;
       margin-left: auto;
-      background:#00BFFF;
+      background:#FFFAF0;
       
       min-height: 800px;
       padding : 50 px 50px ;
@@ -61,10 +61,10 @@ $req=$comC->afficherReponses();
         <br>
         <hr>
     
-        <table class="table table-bordered table-danger" width=100% collaspacing="0">
+        <table class="table table-bordered table-secondary" width=100% collaspacing="0">
 
         <thead>
-            <tr class="table-danger">
+            <tr class="table-secondary">
                 
               
                 <th scope="col">id_reponse</th>
@@ -86,7 +86,7 @@ $req=$comC->afficherReponses();
             ?>
                
 
-                    <tr class=" table-danger">
+                    <tr class=" table-secondary">
 
                                         <td><?php echo $comment['id_reponse']; ?></td>
                                         <td><?php echo $comment['id_commentaire_reponse']; ?></td>

@@ -72,7 +72,7 @@ if( !empty($_POST['nom']) &&
       width: 60%;
       margin-right: auto;
       margin-left: auto;
-      background:#00BFFF;
+      background:#FFFAF0;
       
       min-height: 800px;
       padding : 50 px 50px ;

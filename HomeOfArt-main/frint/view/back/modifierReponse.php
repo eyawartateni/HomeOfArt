@@ -39,8 +39,8 @@ $error = "Missing information";
 
 }
 
-$req_all_value = $db->prepare('SELECT *FROM commentaire WHERE id_commentaire=?');
-$req_all_value->execute(array($_GET['id_commentaire']));
+$req_all_value = $db->prepare('SELECT *FROM reponse WHERE id_reponse=?');
+$req_all_value->execute(array($_GET['id_reponse']));
 $reponses = $req_all_value->fetch(PDO::FETCH_OBJ);
 ?>     
 
@@ -70,7 +70,7 @@ $reponses = $req_all_value->fetch(PDO::FETCH_OBJ);
       width: 50%;
       margin-right: auto;
       margin-left: auto;
-      background:#D3D3D3;
+      background:#FFFAF0;
       
       min-height: 800px;
       padding : 50 px 50px ;

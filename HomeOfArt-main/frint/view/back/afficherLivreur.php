@@ -19,7 +19,7 @@ $livreurC=new LivreurC();
 	<br>
     <br>
 
-<div class="bg-info">	
+<div class="bg-light">	
 <div class="container"> 
 
 

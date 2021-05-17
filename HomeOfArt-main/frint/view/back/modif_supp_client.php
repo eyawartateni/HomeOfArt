@@ -32,7 +32,7 @@ require_once ('index.html');
       width: 50%;
       margin-right: auto;
       margin-left: auto;
-      background:#00BFFF;
+      background:#FFFAF0;
       
       min-height: 800px;
       padding : 50 px 50px ;
@@ -62,7 +62,7 @@ require_once ('index.html');
                  $req_all_publication = $db->prepare('SELECT *FROM utilisateur');
                  $req_all_publication->execute();
                  
-                 ?> <table class="table table-success table-striped" style= "width: 100%">
+                 ?> <table class="table table-secondary table-secondary" style= "width: 100%">
                  
                  <thead>
     <tr>

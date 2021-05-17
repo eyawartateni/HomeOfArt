@@ -1,5 +1,4 @@
 <?php 
-include "../../config.php";
 require_once "../../model/Evenement.php";
 class UtilisateurC
 {

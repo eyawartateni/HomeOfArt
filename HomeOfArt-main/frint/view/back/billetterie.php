@@ -3,14 +3,18 @@
 ///////////////ajout////////////////////
 include "../../model/Billet.php";
 include_once  '../../controller/BilletC.php';
+include "../../model/Evenement.php";
+include_once  '../../controller/EvenementC.php';
 require_once ('index.html');
+
 
 
 $error ="";
 $userb=null;
 $userBC =new BilletC();
 
-
+$eventC = new UtilisateurC();
+$liste = $eventC->afficherUtilisateur();
 
 
 
@@ -94,7 +98,19 @@ $listeUsersb= $billetC->afficherBillet();
 <form action="" method="POST" class="w-50">
 <br>
 
-<input type="number" name="id_evenement" id="id_evenement" class="form-control" placeholder="ID evenement" autocomplete="off">
+<select name="id_evenement" id="id_evenement" class="form-control">
+    <option> Choose Evenement </option>
+     <?php
+         foreach($liste as $hamadi) {
+             ?>
+             <option  >
+               <?php  echo $hamadi['id_event'] ?>
+               
+               </option>
+            <?php
+              }
+              ?>
+        </select>
 
 
 <input type="float" name="prix" id="prix" class="form-control" placeholder="prix du billet" autocomplete="off">

@@ -1,6 +1,7 @@
 <?php
 
 require_once ('include/header.php');
+include_once "../../config.php";
 
 include_once '../../model/Evenement.php';
 include_once '../../controller/EvenementC.php';

@@ -32,7 +32,7 @@ $db= config::getConnexion();
     {
       width: 100%;
       height: 100vh;
-      background :#FFFAF0;
+      background :#FFFFFF;
      }
     
     .center
@@ -40,7 +40,7 @@ $db= config::getConnexion();
       width: 55%;
       margin-right: auto;
       margin-left: auto;
-      background:#00BFFF;
+      background:#FFFAF0;
       
       min-height: 800px;
       padding : 50 px 50px ;
@@ -83,7 +83,7 @@ $db= config::getConnexion();
             $liste=$comC->RechercherCommentaire($_POST['id_commentaire'],$_POST['id_publication_commentaire'],$_POST['id_client_commentaire']);
             if ($liste !== false) {
     ?>
-        <table class="table table-success table-striped" style= "width: 100%">
+        <table class="table table-secondary table-secondary" style= "width: 100%">
             <tr>
                 
                 <th>id_commentaire</th>
@@ -107,7 +107,7 @@ $db= config::getConnexion();
                  foreach($liste as $comment){
             ?>
 
-                <tr class="table table-success table-striped">
+                <tr class="table table-secondary table-secondary">
 
                     <td><?PHP echo $comment['id_commentaire']; ?></td>
                     <td>

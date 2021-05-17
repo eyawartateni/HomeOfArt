@@ -1,10 +1,14 @@
 
 <?php 
+session_start();
+
 ///////////////ajout////////////////////
 require_once ('index.html');
 include "../../model/Evenement.php";
 include_once  '../../controller/EvenementC.php';
+include "../../config.php";
 
+$id_artiste=$_SESSION['id'];
 
 $error ="";
 $user=null;
@@ -50,8 +54,7 @@ if(
     isset($_POST['nom_event']) &&
 isset($_POST['type_event']) &&
 isset ($_POST['date_event']) &&
-isset ($_POST['nbre_participants']) &&
-isset($_POST['artiste'])
+isset ($_POST['nbre_participants']) 
 
 )
 {
@@ -59,8 +62,7 @@ isset($_POST['artiste'])
         !empty($_POST['nom_event']) &&
     !empty($_POST['type_event']) &&
     !empty($_POST['date_event']) &&
-    !empty($_POST['nbre_participants']) &&
-    !empty($_POST['artiste']) 
+    !empty($_POST['nbre_participants']) 
     
     )
     {
@@ -70,7 +72,7 @@ isset($_POST['artiste'])
             $_POST['type_event'],
             $_POST['date_event'],
             $_POST['nbre_participants'],
-            $_POST['artiste']
+            $id_artiste
         );
         $userC->ajouterUtilisateur($user,$name_file);
     }
@@ -127,6 +129,7 @@ $listeUsers= $utilisateurC->afficherUtilisateur();
                         
 <form action="" method="POST" enctype="multipart/form-data" class="w-50">
 <br>
+<input type="text" name="artiste" value="<?php echo $id_artiste ?>" id="artiste" class="form-control " placeholder="artiste" autocomplete="off" Readonly>
 
 <input type="text" name="nom_event" id="nom_event" class="form-control" placeholder="Nom de l'evenement" autocomplete="off">
 
@@ -134,7 +137,6 @@ $listeUsers= $utilisateurC->afficherUtilisateur();
 <input type="date" name="date_event" id="date_event" class="form-control" placeholder="date de l'evenement" autocomplete="off">
     <input type="number" name="nbre_participants" min="0" max="200" id="nbre_participants" class="form-control" placeholder="nombre des participants" autocomplete="off">
   
-      <input type="text" name="artiste" id="artiste" class="form-control " placeholder="artiste" autocomplete="off">
     
     
       <input type="text" name="type_event" id="type_event" class="form-control " placeholder="type" autocomplete="off">
@@ -257,6 +259,8 @@ $listeUsers= $utilisateurC->afficherUtilisateur();
                             </div>
 
                            <center> <button class="primary"><a  href="exportEvent.php">Imprimer</a></button></center>
+                           <center> <button class="primary"><a  href="tri_event.php">Trier</a></button></center>
+
                         </div>
                     </div>
                 </main>

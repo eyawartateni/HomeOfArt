@@ -31,7 +31,7 @@ $req=$comC->afficherCommentaires();
     {
       width: 100%;
       height: 100vh;
-      background :#FFFAF0;
+      background :#FFFFFF;
      }
     
     .center
@@ -39,7 +39,7 @@ $req=$comC->afficherCommentaires();
       width: 70%;
       margin-right: auto;
       margin-left: auto;
-      background:#00BFFF;
+      background:#FFFAF0;
       
       min-height: 800px;
       padding : 50 px 50px ;
@@ -64,7 +64,7 @@ $req=$comC->afficherCommentaires();
        
   <thead>
 
-    <tr  class="table-danger">
+    <tr  class="table-secondary">
       <th scope="col">Id</th>
       <th scope="col">Message</th>
       <th scope="col">Date</th>
@@ -81,7 +81,7 @@ $req=$comC->afficherCommentaires();
                                         foreach($req as $row){
                                         ?>
 
-                                        <tr class="table-danger">
+                                        <tr class="table-secondary">
 
                                         <td><?php echo $row['id_commentaire']; ?></td>
                                         <td><?php echo $row['messages']; ?></td>

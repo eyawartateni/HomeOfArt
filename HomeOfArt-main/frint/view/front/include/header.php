@@ -57,10 +57,7 @@
               <a href="./afficherEvent.php" class="nav-link">Evénements</a>
             </li>
             <li class="nav-item">
-              <a href="#about" class="nav-link scroll-link">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link scroll-link">Contact</a>
+              <a href="index_client.php" class="nav-link scroll-link">Contact</a>
             </li>
             <li class="nav-item">
               <a href="./ProfilUser.php" class="nav-link scroll-link">Account</a>

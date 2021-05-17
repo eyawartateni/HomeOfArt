@@ -22,7 +22,7 @@ include_once '../../Controller/publicationC.php';
     {
       width: 100%;
       height: 100vh;
-      background :#eee;
+      background :#FFFFFF;
      }
     
     .center
@@ -30,7 +30,7 @@ include_once '../../Controller/publicationC.php';
       width: 50%;
       margin-right: auto;
       margin-left: auto;
-      background:#D3D3D3;
+      background:#FFFAF0;
       
       min-height: 800px;
       padding : 50 px 50px ;
@@ -84,7 +84,7 @@ include_once '../../Controller/publicationC.php';
              
 
                <div class="d-grid gap-2 col-6 mx-auto">
-               <input type ="submit" name="submits" value="Modifier sans image"  class ="btn btn-primary" onclick="verifier();"><br><br>
+               <input type ="submit" name="submits" value="Modifier"  class ="btn btn-primary" onclick="verifier();"><br><br>
                </div>
              
                <div class="d-grid gap-2 col-6 mx-auto">

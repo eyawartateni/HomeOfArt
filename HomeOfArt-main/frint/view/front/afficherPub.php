@@ -15,10 +15,10 @@ $db= config::getConnexion();
 <html lang="en">
     <!-- Hero -->
    
-    <li value="login" style="background-color: #04AA6D; color: #ff8800; padding: 12px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 3.5%;font-size: 12px; position:absolute ; top:1%; right:7%;">
+    <li value="login" style="background-color: #04AA6D; color: #ff8800; padding: 12px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 4%;font-size: 12px; position:absolute ; top:1%; right:1%;">
                <a href="./login.php" > login</a>
             </li>
-    <img src="./include/images/banner.png" alt="" class="hero-img" />
+    <img src="./include/images/banner.png" style=" position:absolute ; top:10%; right:-8%;" alt="" class="hero-img" />
     <div class="hero-content">
       <h1>
         <span>Sell And Buy Art</span>

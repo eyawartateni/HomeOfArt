@@ -34,7 +34,7 @@
                     $_SESSION['login']=$liste['login'];
                     $_SESSION['password']=$liste['password'];
                     $_SESSION['role']=$liste['role'];
-                    if($_SESSION['role']=="admin")
+                    if($_SESSION['role']=="admin" || $_SESSION['role']=="artiste")
                     {
                         header('location:../back/index.html');
                     }

@@ -114,20 +114,7 @@ $artnum=mysqli_num_rows($result);
         
           var chart = new google.visualization.PieChart(document.getElementById('traffic-chart')).draw(data, options);
 
-          var barchart_options = {title:'Barchart: Best seller',
-                       width:500,
-                       height:300,
-                       legend: 'none',
-                       title: 'COMMANDE',
-            subtitle: '',
-            animation:{
-        duration: 1000,
-        easing: 'inAndOut',
-      },
-                    };
-                    
-        var barchart =  new google.charts.Bar(document.getElementById('aloe'));
-        barchart.draw(data, google.charts.Bar.convertOptions(barchart_options));
+       
        
     }
 
@@ -140,7 +127,6 @@ $artnum=mysqli_num_rows($result);
 
 
 <div   class="stat"   id="traffic-chart" class="traffic-chart"></div>
-<td><div id="aloe" style="border: 1px solid #ccc" ></div></td>
 
 
 </body>

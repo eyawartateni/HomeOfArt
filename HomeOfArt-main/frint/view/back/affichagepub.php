@@ -31,7 +31,7 @@ $db= config::getConnexion();
       width: 60%;
       margin-right: auto;
       margin-left: auto;
-      background:#00BFFF;
+      background:#FFFAF0;
       
       min-height: 800px;
       padding : 50 px 50px ;
@@ -56,8 +56,9 @@ $db= config::getConnexion();
     {
       width: 100%;
       height: 100vh;
-      background :#FFFAF0;
+      background :#FFFFFF;
     }
+    
 
     </style>
 
@@ -93,7 +94,7 @@ while($reponse=$req->fetch(PDO::FETCH_OBJ)){?>
 <div class="card-body" >
 <h5 class="card-title"> <?php echo $reponse->titre; ?> </h5>
 <p class="card-text"><?php echo $reponse->description; ?> </p>
-<a href="plus.php?titre=<?php echo $reponse->titre; ?>&description=<?php echo $reponse->description ?>&image_name=<?php echo $reponse->image_name  ?>  " class="btn btn-primary">Plus</a>
+<a href="plus.php?titre=<?php echo $reponse->titre; ?>&id_publication=<?php echo $reponse->id_publication?>&description=<?php echo $reponse->description ?>&image_name=<?php echo $reponse->image_name  ?>  " class="btn btn-primary">Plus</a>
 </div>
 </div>
 

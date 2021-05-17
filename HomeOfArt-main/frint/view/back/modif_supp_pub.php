@@ -23,7 +23,7 @@ include_once '../../Controller/publicationC.php';
     {
       width: 100%;
       height: 100vh;
-      background :#FFFAF0;
+      background :#FFFFFF;
      }
     
     .center
@@ -31,7 +31,7 @@ include_once '../../Controller/publicationC.php';
       width: 50%;
       margin-right: auto;
       margin-left: auto;
-      background:#00BFFF;
+      background:#FFFAF0;
       
       min-height: 800px;
       padding : 50 px 50px ;
@@ -61,7 +61,7 @@ include_once '../../Controller/publicationC.php';
                  $req_all_publication = $db->prepare('SELECT *FROM publication');
                  $req_all_publication->execute();
                  
-                 ?> <table class="table table-success table-danger" style= "width: 100%">
+                 ?> <table class="table table-secondary table-secondary" style= "width: 100%">
                  
                  <thead>
     <tr>

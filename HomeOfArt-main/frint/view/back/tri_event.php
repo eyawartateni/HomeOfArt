@@ -2,13 +2,13 @@
 
 require_once ('index.html');
 include_once "../../config.php";
-include_once '../../Model/commentaire.php';
-include_once '../../Controller/commentaireC.php';
+include "../../model/Evenement.php";
+include_once  '../../controller/EvenementC.php';
 
 
 $error = "";
 $pub  = null;
-$comC = new CommentaireC();
+$comC = new UtilisateurC();
 $db= config::getConnexion();
 
 
@@ -54,14 +54,14 @@ $db= config::getConnexion();
 <div class ="center" ><br><br><br>
     
 <!-- Je choisis mon critère de tri -->
-<form method="get" action="trier_commentaire.php">
+<form method="get" action="tri_event.php">
                             <p>
-                                <label for="tri"><h5> Afficher les commentaires selon :</h5> </label><br>
+                                <label for="tri"><h5> Afficher les Evenements selon :</h5> </label><br>
     
                                     <select name="tri" id="tri" class= "form form-control">
-                                       <option value="id_commentaire" selected>id_commentaire</option>
-                                       <option value="messages">messages</option>
-                                       <option value="date_commentaire">date_commentaire</option>
+                                       <option value="date_event" selected>Date</option>
+                                       <option value="id_event">Id</option>
+                                       <option value="nbre_participants">Nombre</option>
                                     </select>
                               </p>
                               <br><br><br>
@@ -76,11 +76,12 @@ $db= config::getConnexion();
         <table class="table table-bordered table-secondary" style= "width: 100%">
             <tr class="table-secondary">
                 
-                 <th>ID</th>
-                 <th>Message</th>
-                 <th>Date</th>
-                 <th>Publication reliée</th>
-                 <th>Client reliée</th>
+                                                <th>Id event</th>
+                                                <th>Nom event</th>
+                                                <th>Type event</th>
+                                                <th>Date event</th>
+                                                <th>Nbre participants</th>
+                                                <th>Artiste</th>
                
                 
             </tr>
@@ -89,19 +90,21 @@ $db= config::getConnexion();
             <?php
             
             
-            $tri = isset($_GET['tri']) ? $_GET['tri'] : 'id_commentaire';
+            $tri = isset($_GET['tri']) ? $_GET['tri'] : 'id_event';
             try
     {
         // On se connecte à MySQL
-        $reponse = $db->query('SELECT * FROM commentaire ORDER BY '.$tri.'') or die(print_r($bdd->errorInfo()));  
+        $reponse = $db->query('SELECT * FROM evenement ORDER BY '.$tri.'') or die(print_r($bdd->errorInfo()));  
           
                 while($donnees = $reponse->fetch())
                 {
-                    echo  '<tr><td>'.$donnees['id_commentaire'],
-                          '</td><td>'. $donnees['messages'],
-                          '</td><td>'. $donnees['date_commentaire'],
-                          '</td><td>'. $donnees['id_publication_commentaire'],
-                          '</td><td>'. $donnees['id_client_commentaire'],                        
+                    echo  '<tr><td>'.$donnees['id_event'],
+                          '</td><td>'. $donnees['nom_event'],
+                          '</td><td>'. $donnees['type_event'],
+                          '</td><td>'. $donnees['date_event'],
+                          '</td><td>'. $donnees['nbre_participants'],
+                          '</td><td>'. $donnees['artiste'],                        
+                        
                           '</td></tr>';
                     }
              

@@ -3,6 +3,7 @@ require_once ('include/header.php');
 
 include_once '../../model/Evenement.php';
 include_once '../../controller/EvenementC.php';
+include_once "../../config.php";
 
 
 
@@ -17,7 +18,7 @@ $db= config::getConnexion();
 <html lang="en">
   
     <!-- Hero -->
-    <img src="./include/images/banner.png" alt="" class="hero-img" />
+    <img src="./include/images/banner.png"  style=" position:absolute ; top:10%; right:-8%;" alt="" class="hero-img" />
 
     <div class="hero-content">
       <h1>
