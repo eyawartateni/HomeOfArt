@@ -28,8 +28,8 @@ $db= config::getConnexion();
         <div class="price">Type: <?php echo $_GET['type_event']  ?>  </div>
         <p> nombre participants: <?php echo $_GET['nbre_participants'] ; ?>  </p>
         <form class="form">
-          <input type="text" placeholder="1">
-          <a href="cart.html" class="addCart">Add To Cart</a>
+          
+          
         </form>
         <h3>Event Detail</h3>
         <p> <?php echo $_GET['date_event'] ?> </p>
@@ -71,9 +71,7 @@ $donnees3 = $reponse3->fetch();
         <div class="product-header">
           <img src="./include/images/tickett.png" alt="">
           <ul class="icons">
-            <span><i class="bx bx-heart"></i></span>
-            <span><i class="bx bx-shopping-bag"></i></span>
-            <span><i class="bx bx-search"></i></span>
+            
           </ul>
         </div>
         <div class="right">

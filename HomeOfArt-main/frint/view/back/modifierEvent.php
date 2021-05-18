@@ -2,11 +2,12 @@
     include "../../controller/EvenementC.php";
     include_once '../../model/Evenement.php';
     require_once ('index.html');
+    include_once "../../config.php";
 
 	$utilisateurC = new UtilisateurC();
 	$error = "";
 
-	if (
+	if ( 
         
     isset($_POST['nom_event']) &&
 isset($_POST['type_event']) &&

@@ -45,7 +45,7 @@ $db= config::getConnexion();
           <div class="product-header">
             <img src="../../view/back/image/<?php echo $reponse->image_event?>" alt="">
             <ul class="icons">
-              <span><i class="bx bx-shopping-bag"></i></span>
+              
             </ul>
           </div>
           

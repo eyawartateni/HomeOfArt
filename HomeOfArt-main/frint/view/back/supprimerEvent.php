@@ -1,5 +1,6 @@
 <?PHP
 	include "../../controller/EvenementC.php";
+	include_once "../../config.php";
 
 	$utilisateurC=new UtilisateurC();
 	
