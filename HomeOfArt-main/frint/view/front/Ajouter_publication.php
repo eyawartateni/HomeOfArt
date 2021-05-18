@@ -41,7 +41,7 @@ $db= config::getConnexion();
 
     </style>
 
-<a href="ProfilUser.php"  class="">Retour</a>
+<a href="ProfilUser.php"  class="btn btn-primary">Retour à la page précédente</a>
 
     <title>Publication administrateur</title>
 </head>
@@ -50,7 +50,7 @@ $db= config::getConnexion();
     
 <div class ="center"><br><br><br>
 <h1>Publication :</h1><br><br><br>
-<script src="script.js" > </script>
+<script src="omar.js" > </script>
 
     <?php
 

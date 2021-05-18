@@ -15,7 +15,7 @@ include_once '../../Controller/publicationC.php';
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin
     ="anonymous">
-    <script src="script.js" > </script>
+    <script src="omar.js" > </script>
     <style type="text/css">
     
     body
@@ -84,7 +84,7 @@ include_once '../../Controller/publicationC.php';
              
 
                <div class="d-grid gap-2 col-6 mx-auto">
-               <input type ="submit" name="submits" value="Modifier"  class ="btn btn-primary" onclick="verifier();"><br><br>
+               <input type ="submit" name="submits" value="Modifier"  class ="btn btn-primary" onclick="return verifier();"><br><br>
                </div>
              
                <div class="d-grid gap-2 col-6 mx-auto">

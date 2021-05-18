@@ -36,7 +36,7 @@
                     $_SESSION['role']=$liste['role'];
                     if($_SESSION['role']=="admin" || $_SESSION['role']=="artiste")
                     {
-                        header('location:../back/index.html');
+                        header('location:../back/dash.php');
                     }
                     else
                     {

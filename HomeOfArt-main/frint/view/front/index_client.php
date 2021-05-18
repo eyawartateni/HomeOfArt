@@ -32,7 +32,7 @@
         <form class="contact" action="" method="post">
           <textarea name="message" rows="5" placeholder="Votre Message" required></textarea>
           <input type="submit" name="submit" class="send-btn" value="Envoyer">
-          <span><a href="ProfilUser.php"><i class="fa fa-arrow-circle-left"></i></a></span>
+          <span><a href="ProfilUser.php"><i class="fa fa-arrow-circle-left"></i> Retour</a></span>
 
           
         </form>
