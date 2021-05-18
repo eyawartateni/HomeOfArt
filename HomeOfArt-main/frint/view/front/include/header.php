@@ -19,7 +19,7 @@
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="./include/css/styles.css" />
   
-  <title>SeeMyArt - Ecommerce Website</title>
+  <title>Home of art- Ecommerce Website</title>
 </head>
 
 <body>
@@ -30,13 +30,13 @@
     <nav class="nav">
       <div class="navigation container">
         <div class="logo">
-          <h1>SeeMyArt</h1>
+          <h1>Home of art</h1>
         </div>
 
         <div class="menu">
           <div class="top-nav">
             <div class="logo">
-              <h1>SeeMyArt</h1>
+              <h1>Home of art</h1>
             </div>
             <div class="close">
               <i class="bx bx-x"></i>

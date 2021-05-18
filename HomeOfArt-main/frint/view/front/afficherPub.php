@@ -14,8 +14,8 @@ $db= config::getConnexion();
 <!DOCTYPE html>
 <html lang="en">
     <!-- Hero -->
-   
-    <li value="login" style="background-color: #04AA6D; color: #ff8800; padding: 12px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 4%;font-size: 12px; position:absolute ; top:1%; right:1%;">
+  
+    <li value="login" style="background-color: #04AA6D; color: #ff8800; padding: 15px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 4%;font-size: 12px; position:absolute ; top:7%; right:3%;">
                <a href="./login.php" > login</a>
             </li>
     <img src="./include/images/banner.png" style=" position:absolute ; top:10%; right:-8%;" alt="" class="hero-img" />
