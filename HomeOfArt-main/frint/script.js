@@ -1,4 +1,5 @@
-function test()
+
+/**/function test()
 {
     var nom=f.nom.value
     var prenom=f.prenom.value
