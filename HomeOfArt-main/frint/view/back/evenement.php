@@ -113,7 +113,7 @@ $listeUsers= $utilisateurC->afficherUtilisateur();
   top:20%;
   left:17%;
   ">
-   <script src="./cs.js"></script>
+   <script src="./scripteya.js"></script>
                         <h1 id="tab" class="mt-4" >Evenements</h1>
                         <ol class="breadcrumb mb-4">
                             

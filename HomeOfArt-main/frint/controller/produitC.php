@@ -44,6 +44,7 @@ class produitC{
      }
   }
 
+ 
   function ModifierProduit($idproduit,$libelle,$prix,$quantite,$descriptionP)
   {
        $sql = "UPDATE produit SET libelle='$libelle' ,prix='$prix',quantite='$quantite',descriptionP='$descriptionP'  WHERE idproduit='$idproduit'";

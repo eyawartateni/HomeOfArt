@@ -15,9 +15,7 @@ $db= config::getConnexion();
 <html lang="en">
     <!-- Hero -->
   
-    <li value="login" style="background-color: #04AA6D; color: #ff8800; padding: 15px 18px; margin: 8px 0; border: none; border-radius: 12px;cursor: pointer; width: 4%;font-size: 12px; position:absolute ; top:7%; right:3%;">
-               <a href="./login.php" > login</a>
-            </li>
+    
     <img src="./include/images/banner.png" style=" position:absolute ; top:10%; right:-8%;" alt="" class="hero-img" />
     <div class="hero-content">
       <h1>
@@ -69,7 +67,7 @@ $db= config::getConnexion();
             while($reponse=$req->fetch(PDO::FETCH_OBJ)){?>
         <div class="product">
           <div class="product-header">
-            <img src="./include/images/<?php echo $reponse->imageP?>" alt="">
+            <img src="../../view/back/image/<?php echo $reponse->imageP?>" alt="">
             <ul class="icons">
               <span><i class="bx bx-shopping-bag"></i></span> 
             </ul>

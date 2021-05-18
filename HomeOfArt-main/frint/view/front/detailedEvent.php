@@ -90,10 +90,17 @@ $donnees3 = $reponse3->fetch();
             <i class="bx bx-star"></i> 
             
           </div>-->
-          
-          <a class="pss" href="">acheter</a>
-          
-          
+
+            <form class="form" action="ajouterPanier.php" method="post">
+        <input type="hidden" id="idclient" name="idclient" value="$idclient">
+                   <input type="hidden" id="image" name="image" value="./include/image/africa.jpg">
+                  <input type="hidden" id="nom" name="nom" value="billet">
+                  <input type="hidden" id="prix" name="prix" value="20 ">
+                    <input type="hidden" id="quantite" name="quantite" value="1">
+        
+         <button type="submit" class="pss">Add to cart</button>
+        </form>
+
          
 
         </div>
