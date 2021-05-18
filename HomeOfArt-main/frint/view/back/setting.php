@@ -239,16 +239,14 @@ if(      isset($_POST['nom']) &&
     isset($_POST['prenom']) &&
     isset($_POST['email']) &&
     isset($_POST['login']) &&
-    isset($_POST['pass']) &&
-    isset($_POST['role'])
+    isset($_POST['pass']) 
 )
 {
     if( !empty($_POST['nom']) &&
         !empty($_POST['prenom']) &&
         !empty($_POST['email']) &&
         !empty($_POST['login']) &&
-        !empty($_POST['pass']) &&
-        !empty($_POST['role'])
+        !empty($_POST['pass']) 
     )
     {
         $user =new Utilisateur(
@@ -259,7 +257,7 @@ if(      isset($_POST['nom']) &&
             $_POST['login'],
             $_POST['pass']
         );
-        $usere->ModifierUtilisateur($user,$_POST['role'],$id);
+        $usere->ModifierUtilisateur($user,"admin",$id);
     }
     else {
         $error="Missing information !";
