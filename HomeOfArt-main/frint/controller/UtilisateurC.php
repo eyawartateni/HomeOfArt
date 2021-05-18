@@ -78,6 +78,22 @@ class utilisateurC
           die('Erreur: '.$e->getMessage());
       }
   }
+  function updatepassword($email)
+  {
+       $sql = "UPDATE utilisateur SET password='0000' WHERE email=:email";
+
+       $db= config::getConnexion();
+      try{
+          $query =$db ->prepare($sql);
+          $query->execute([
+              'email' =>$email
+              
+          ]);
+      }catch(Exception $e)
+      {
+          die('Erreur: '.$e->getMessage());
+      }
+  }
 
   
        function SupprimerUtilisateur($id)

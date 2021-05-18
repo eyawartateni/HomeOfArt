@@ -1,15 +1,22 @@
 
 <?php
-session_start();
-include_once "../../model/commande.php";
-include_once "../../controller/commandeC.php";
-include_once "../../controller/panierC.php";
-require_once ('include/header.php');
+include_once "../../controller/UtilisateurC.php";
+include_once "../../model/Utilisateur.php";
+include_once "../../config.php";
+
+   $error="";
+   $user=null;
+   $userC= new utilisateurC();
 
 
-$mailto =$email; // houni t7ot il mail ili bich tibaathlou 
-    $mailSub = "reset password";
-    $mailMsg = "Votre password est 0000";
+define('EMAIL', 'mayssa.bouzid2000@gmail.com');
+define ('PASS','02052000m');
+
+if(isset($_POST['reset'])) {
+    $mailto =$_POST['email']; // houni t7ot il mail ili bich tibaathlou 
+    $mailSub = "salemou alykom";
+    $mailMsg = "Votre password est 0000 temporaire vous pousez le modifier";
+    $userC->updatepassword($_POST['email']);
     require 'PHPMailer-master/PHPMailerAutoload.php';
     $mail = new PHPMailer();
     $mail ->IsSmtp();
@@ -34,8 +41,7 @@ $mailto =$email; // houni t7ot il mail ili bich tibaathlou
     {
     echo "Mail Sent";
     }
-
-
+}
 
 ?>
 
@@ -56,7 +62,7 @@ $mailto =$email; // houni t7ot il mail ili bich tibaathlou
         <meta name="description" content="" />
         <meta name="author" content="" />
         
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/a.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
@@ -70,19 +76,20 @@ $mailto =$email; // houni t7ot il mail ili bich tibaathlou
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Password Recovery</h3></div>
                                     <div class="card-body">
                                         <div class="small mb-3 text-muted">Enter your email address and we will send you a link to reset your password.</div>
-                                        <form>
+                                        <form method="POST">
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                                <input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" />
+                                                <input class="form-control py-4" id="email" name="email" type="email" aria-describedby="emailHelp" placeholder="Enter email address" />
                                             </div>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="login.html">Return to login</a>
-                                                <a class="btn btn-primary" href="login.html">Reset Password</a>
-                                            </div>ss
+                                                <a class="small" href="./login.php">Return to login</a>
+                                                
+                                                <input type="submit" class="btn btn-outline-primary" value="reset password" name="reset" >
+                                            </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>
