@@ -20,9 +20,9 @@ $mailto =$email; // houni t7ot il mail ili bich tibaathlou
     $mail ->Host = "smtp.gmail.com";
     $mail ->Port = 465; // or 587
     $mail ->IsHTML(true);
-    $mail ->Username = "mayssa.bouzid2000@gmail.com"; // houni t7ot il maail mnin bich yitibaaath
-    $mail ->Password = "02052000m"; // houni t7ot il mdp mttaaa il  maail mnin bich yitibaaath
-    $mail ->SetFrom("mayssa.bouzid2000@gmail.com"); // houni t7ot il maail mnin bich yitibaaath
+    $mail ->Username = ""; // houni t7ot il maail mnin bich yitibaaath
+    $mail ->Password = ""; // houni t7ot il mdp mttaaa il  maail mnin bich yitibaaath
+    $mail ->SetFrom(""); // houni t7ot il maail mnin bich yitibaaath
     $mail ->Subject = $mailSub;
     $mail ->Body = $mailMsg;
     $mail ->AddAddress($mailto);
