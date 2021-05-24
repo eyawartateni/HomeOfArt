@@ -15,14 +15,14 @@ $mail =new PHPMailer();
  $mail->isSMTP();
  $mail->Host= "smtp.gmail.com";
  $mail->SMTPAuth = true;
- $mail->Username= "aya.ouertatani@esprit.tn";
- $mail->Password= '191JFT1082';
+ $mail->Username= "";
+ $mail->Password= '';
  $mail->Port = 465;
  $mail->SMTPSecure = "ssl";
  // email settings
  $mail->isHTML(true);
  $mai->setForm($email, $name);
- $mail->addAddress("aya.ouertatani@esprit.tn");
+ $mail->addAddress("");
 $mail->Subject= ("$email($subject)");
 $mail->Body = $body;
 if($mail->send())
